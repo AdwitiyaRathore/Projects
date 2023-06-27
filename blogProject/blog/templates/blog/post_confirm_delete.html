@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <!-- It comes from DeleteView class. Either you can use the model name or just the object keyword. 
+        If you want to use your own context name, you should define it to the class. -->
+        <p>Are you sure you want to delete {{ object }}?</p>
+        <input type="submit" class="btn btn-danger" name="" id="Confirm">
+    </form>
+
+{% endblock %}
